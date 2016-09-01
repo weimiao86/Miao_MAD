@@ -1,2 +1,6 @@
 # Miao_MAD
-ATLAS-5120 FALL 16
+
+Project repository for ATLAS-5120 FALL 16
+
+Wei Miao(104552594)
+
