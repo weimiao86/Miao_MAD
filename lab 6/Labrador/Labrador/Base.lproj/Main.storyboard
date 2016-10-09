@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Labrador" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="labrador" translatesAutoresizingMaskIntoConstraints="NO" id="SOo-Pc-goC" userLabel="labradors">
+                                <rect key="frame" x="190" y="150" width="220" height="300"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8ZK-Wy-yTm" appends="YES" id="h92-0Z-4Fg"/>
+                                    <outletCollection property="gestureRecognizers" destination="dYf-uY-A4y" appends="YES" id="8nq-1t-bDb"/>
+                                    <outletCollection property="gestureRecognizers" destination="ioP-C4-pEl" appends="YES" id="fwZ-D1-xdG"/>
+                                    <outletCollection property="gestureRecognizers" destination="w0M-Of-f5J" appends="YES" id="7uI-o5-927"/>
+                                    <outletCollection property="gestureRecognizers" destination="buT-ai-fDo" appends="YES" id="FuD-VL-ouh"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SOo-Pc-goC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMo-ee-biA"/>
+                            <constraint firstItem="SOo-Pc-goC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZZk-yg-1Tt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pics" destination="SOo-Pc-goC" id="W6s-DH-aYy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8ZK-Wy-yTm">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="WX1-ml-y3C"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="gm3-y0-DNd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="dYf-uY-A4y">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="5Ch-Bc-hDU"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="x4W-g9-5i2"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="ioP-C4-pEl">
+                    <connections>
+                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="B6J-zw-9pp"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="iMc-7k-fp4"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="w0M-Of-f5J">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="Ssg-vE-FUq"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="jIB-Dl-kxn"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="buT-ai-fDo">
+                    <connections>
+                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="rTv-MQ-O7Q"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Ikm-4Y-250"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="labrador" width="220" height="300"/>
+    </resources>
+</document>
