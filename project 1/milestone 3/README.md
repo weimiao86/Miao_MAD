@@ -18,9 +18,15 @@ Defects found in testing:
 - The App does not have the "remember me / keep signing in" feature. so users have to input account every time login. need a little more time to add :)
 
 Reference:
+
 https://firebase.google.com/docs/ios/setup
+
 https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2
+
 https://cocoapods.org/
+
 http://sourcefreeze.com/ios-uipickerview-example-using-swift/
+
 https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
+
 http://helpmecodeswift.com/image-manipulation/saving-loading-images
