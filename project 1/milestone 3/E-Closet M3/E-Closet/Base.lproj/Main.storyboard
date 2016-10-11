@@ -179,8 +179,12 @@
                             <constraint firstItem="KLT-QQ-lj9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zo1-bV-0ug"/>
                             <constraint firstItem="ufc-m2-jNs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aD1-kb-bOX"/>
                             <constraint firstItem="82M-IW-pOx" firstAttribute="top" secondItem="ufc-m2-jNs" secondAttribute="bottom" id="bHB-Lo-z31"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LnD-Rp-i4N" secondAttribute="trailing" constant="10" id="dM5-lf-IEh"/>
                             <constraint firstItem="LnD-Rp-i4N" firstAttribute="top" secondItem="7ut-uB-GHq" secondAttribute="bottom" constant="48" id="g08-ch-VxU">
                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstItem="LnD-Rp-i4N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="h6Q-cq-KtK">
+                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="LnD-Rp-i4N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jTb-HE-VdP"/>
                             <constraint firstItem="ufc-m2-jNs" firstAttribute="centerX" secondItem="82M-IW-pOx" secondAttribute="centerX" id="ked-aH-0He"/>
@@ -215,7 +219,9 @@
                                 <exclude reference="Jug-NP-Eng"/>
                                 <exclude reference="N3U-oH-IwH"/>
                                 <exclude reference="QWO-FH-Bhp"/>
+                                <exclude reference="dM5-lf-IEh"/>
                                 <exclude reference="g08-ch-VxU"/>
+                                <exclude reference="h6Q-cq-KtK"/>
                                 <exclude reference="jTb-HE-VdP"/>
                                 <exclude reference="sRK-eG-P0Y"/>
                                 <exclude reference="vQg-vd-WJ2"/>
@@ -281,6 +287,12 @@
                                 <exclude reference="aD1-kb-bOX"/>
                                 <include reference="HwE-zW-mwV"/>
                                 <exclude reference="zLO-Fh-N4Y"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="dM5-lf-IEh"/>
+                                <include reference="h6Q-cq-KtK"/>
                             </mask>
                         </variation>
                     </view>
