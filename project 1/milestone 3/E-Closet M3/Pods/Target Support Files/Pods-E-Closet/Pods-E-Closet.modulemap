@@ -1,0 +1,6 @@
+framework module Pods_E_Closet {
+  umbrella header "Pods-E-Closet-umbrella.h"
+
+  export *
+  module * { export * }
+}
