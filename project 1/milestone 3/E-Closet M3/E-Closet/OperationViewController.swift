@@ -88,7 +88,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //init url array
     func initUrlArray(){
         let userRef = FIRDatabase.database().reference().child(currentUid!)
-        userRef.queryOrderedByChild("url").observeEventType(.ChildAdded, withBlock: { snapshot in
+        userRef.queryOrderedByValue().observeEventType(.ChildAdded, withBlock: { (snapshot) in
             if let allUrl = snapshot.value!["url"] as? String {
                 if !self.urls.contains(allUrl){
                     self.urls.append(allUrl)
@@ -107,7 +107,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     //update query keys
     func updateQuery(){
-        
         var owners = ""
         var types = ""
         var colors = ""
@@ -147,26 +146,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         print(values)
         let userRef = FIRDatabase.database().reference().child(currentUid!)
         userRef.queryOrderedByChild(keys).queryEqualToValue(values).observeEventType(.ChildAdded, withBlock: { snapshot in
-            let str1 = snapshot.value!["url"] as? String
-            if !self.urls.contains(str1!){
-                self.urls.append(str1!)
+            if let str1 = snapshot.value!["url"] as? String{
+            if !self.urls.contains(str1){
+                self.urls.append(str1)
+            }
             }
         })
-        //clothViewer.image = UIImage(data: NSData(contentsOfString: data))
         displayImage()
     }
+    
     //display filtered image
     func displayImage(){
         if !urls.isEmpty {
             print("\(self.urls)")
             if let url = NSURL(string: urls[index]) {
                 if let data = NSData(contentsOfURL: url) {
-                    //self.data = data
                     clothViewer.image = UIImage(data: data)
                 }
             }
         }
     }
+    
     //update query
     func updateQuery2(){
         self.urls.removeAll()
@@ -471,45 +471,58 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func editImageTag(sender: UIBarButtonItem) {
         if tagPickerSeg.selectedSegmentIndex == 1 {
             if !self.urls.isEmpty{
-            let tempRef = FIRDatabase.database().reference().child(currentUid!).child("url")
-            tempRef.queryEqualToValue(self.urls[index])
-            let imageNmae = tempRef.key
-            print(imageNmae)
-            let owner = pickerView(tagPicker, titleForRow: tagPicker.selectedRowInComponent(0), forComponent: 0)
-            let type = pickerView(tagPicker, titleForRow: tagPicker.selectedRowInComponent(1), forComponent: 1)
-            let color = pickerView(tagPicker, titleForRow: tagPicker.selectedRowInComponent(2), forComponent: 2)
-            let url = self.urls[index]
-            let newRef = FIRDatabase.database().reference().child(imageNmae)
-            let clothImage: [String: String] = [
-                "owner": owner!,
-                "type": type!,
-                "color": color!,
-                "ownertype": owner!+type!,
-                "ownercolor": owner!+color!,
-                "ownertypecolor": owner!+type!+color!,
-                "url": url
-            ]
-            newRef.setValue(clothImage)
+            let tempRef = FIRDatabase.database().reference().child(currentUid!)
+            tempRef.queryOrderedByChild("url").queryEqualToValue(self.urls[index]).observeEventType(.ChildAdded, withBlock: { snapshot in
+                if let editUrl = snapshot.value!["url"] as? String{
+                    if editUrl == self.urls[self.index]{
+                    let editRef = snapshot.ref
+                    let owner = self.pickerView(self.tagPicker, titleForRow: self.tagPicker.selectedRowInComponent(0), forComponent: 0)
+                    let type = self.pickerView(self.tagPicker, titleForRow: self.tagPicker.selectedRowInComponent(1), forComponent: 1)
+                    let color = self.pickerView(self.tagPicker, titleForRow: self.tagPicker.selectedRowInComponent(2), forComponent: 2)
+                    let url = self.urls[self.index]
+                    let clothImage: [String: String] = [
+                        "owner": owner!,
+                        "type": type!,
+                        "color": color!,
+                        "ownertype": owner!+type!,
+                        "ownercolor": owner!+color!,
+                        "ownertypecolor": owner!+type!+color!,
+                        "url": url
+                        ]
+                    editRef.setValue(clothImage)
+                    let alertController = UIAlertController(title: "Done", message: "Tags has been changed to \(owner!), \(type!), \(color!).", preferredStyle: .Alert)
+                        let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+                        alertController.addAction(cancelAction)
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                }
+                })
         }
-        }
-        updateQuery2()
     }
+    }
+    
     //delete image and its tags
     @IBAction func DeleteImage(sender: UIBarButtonItem) {
         let tempRef = FIRDatabase.database().reference().child(currentUid!)
         if !self.urls.isEmpty{
-            tempRef.queryOrderedByChild("url").queryEqualToValue(String(self.urls[index])).observeEventType(.Value, withBlock: { snapshot in
+            tempRef.queryOrderedByChild("url").queryEqualToValue(self.urls[index]).observeEventType(.ChildAdded, withBlock: { snapshot in
                     let alertController = UIAlertController(title: "Warning", message: "Are you sure to delete this image?", preferredStyle: .Alert)
-            let deleteAction = UIAlertAction(title: "Delete", style: .Default, handler: {action in
-            //FIRDatabase.database().reference().child(self.currentUid!).child(imageNmae).removeValue()
-            FIRDatabase.database().reference().child(self.currentUid!).child(snapshot.key).removeValue()
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        alertController.addAction(deleteAction)
-        alertController.addAction(cancelAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-        })
-        self.updateQuery2()
+                    let deleteAction = UIAlertAction(title: "Delete", style: .Default, handler: {action in
+                    //FIRDatabase.database().reference().child(self.currentUid!).child(imageNmae).removeValue()
+                    //FIRDatabase.database().reference().child(self.currentUid!).child(snapshot.ref).removeValue()
+                        if let deleteUrl = snapshot.value!["url"] as? String{
+                            if deleteUrl == self.urls[self.index]{
+                            snapshot.ref.removeValue()
+                            }
+                        }
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    alertController.addAction(deleteAction)
+                    alertController.addAction(cancelAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+            }){ (error) in
+                print(error.localizedDescription)
+            }
         }
     }
     // did finish picking image

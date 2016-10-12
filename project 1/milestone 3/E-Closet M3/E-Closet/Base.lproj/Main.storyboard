@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closet" translatesAutoresizingMaskIntoConstraints="NO" id="LnD-Rp-i4N" userLabel="clothImage">
-                                <rect key="frame" x="127" y="62" width="346" height="346"/>
+                                <rect key="frame" x="117" y="62" width="366" height="366"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" id="BGt-hu-yGm"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="OnU-5g-coa"/>
@@ -54,7 +54,7 @@
                                 </variation>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ufc-m2-jNs" userLabel="pickerFuncSwitch">
-                                <rect key="frame" x="255" y="408" width="91" height="29"/>
+                                <rect key="frame" x="255" y="428" width="91" height="29"/>
                                 <segments>
                                     <segment title="Filter"/>
                                     <segment title="Edit"/>
@@ -81,9 +81,9 @@
                                 </variation>
                             </view>
                             <pickerView contentMode="scaleAspectFit" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="82M-IW-pOx" userLabel="tagPicker">
-                                <rect key="frame" x="140" y="436" width="320" height="120"/>
+                                <rect key="frame" x="140" y="456" width="320" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Uld-ch-kM1"/>
+                                    <constraint firstAttribute="height" constant="100" id="Uld-ch-kM1"/>
                                 </constraints>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
@@ -179,11 +179,11 @@
                             <constraint firstItem="KLT-QQ-lj9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zo1-bV-0ug"/>
                             <constraint firstItem="ufc-m2-jNs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aD1-kb-bOX"/>
                             <constraint firstItem="82M-IW-pOx" firstAttribute="top" secondItem="ufc-m2-jNs" secondAttribute="bottom" id="bHB-Lo-z31"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LnD-Rp-i4N" secondAttribute="trailing" constant="10" id="dM5-lf-IEh"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="LnD-Rp-i4N" secondAttribute="trailing" priority="999" constant="10" id="dM5-lf-IEh"/>
                             <constraint firstItem="LnD-Rp-i4N" firstAttribute="top" secondItem="7ut-uB-GHq" secondAttribute="bottom" constant="48" id="g08-ch-VxU">
                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
                             </constraint>
-                            <constraint firstItem="LnD-Rp-i4N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="h6Q-cq-KtK">
+                            <constraint firstItem="LnD-Rp-i4N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" priority="999" constant="-10" id="h6Q-cq-KtK">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="LnD-Rp-i4N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jTb-HE-VdP"/>
