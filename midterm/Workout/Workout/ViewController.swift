@@ -68,13 +68,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 workoutMiles.text = String(format: "%0.1f", miles)
                 workoutCal.text = String(format: "%0.1f", calories)
             }else if workoutTypeSeg.selectedSegmentIndex == 1{
-                let miles = workoutTime/4
-                let calories = workoutTime*51/6
+                let miles = workoutTime/30
+                let calories = workoutTime*7
                 workoutMiles.text = String(format: "%0.1f", miles)
                 workoutCal.text = String(format: "%0.1f", calories)
             }else if workoutTypeSeg.selectedSegmentIndex == 2{
-                let miles = workoutTime/30
-                let calories = workoutTime*7
+                let miles = workoutTime/4
+                let calories = workoutTime*51/6
                 workoutMiles.text = String(format: "%0.1f", miles)
                 workoutCal.text = String(format: "%0.1f", calories)
             }

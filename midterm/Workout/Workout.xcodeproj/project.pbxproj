@@ -12,6 +12,7 @@
 		C0D3F78D1DAFF72100D4FA42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D3F78B1DAFF72100D4FA42 /* Main.storyboard */; };
 		C0D3F78F1DAFF72100D4FA42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D3F78E1DAFF72100D4FA42 /* Assets.xcassets */; };
 		C0D3F7921DAFF72100D4FA42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D3F7901DAFF72100D4FA42 /* LaunchScreen.storyboard */; };
+		C0D3F79C1DB0124A00D4FA42 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3F79B1DB0124A00D4FA42 /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C0D3F78E1DAFF72100D4FA42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0D3F7911DAFF72100D4FA42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0D3F7931DAFF72100D4FA42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0D3F79B1DB0124A00D4FA42 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ../Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		C0D3F7861DAFF72100D4FA42 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				C0D3F79B1DB0124A00D4FA42 /* Login.swift */,
 				C0D3F7871DAFF72100D4FA42 /* AppDelegate.swift */,
 				C0D3F7891DAFF72100D4FA42 /* ViewController.swift */,
 				C0D3F78B1DAFF72100D4FA42 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D3F79C1DB0124A00D4FA42 /* Login.swift in Sources */,
 				C0D3F78A1DAFF72100D4FA42 /* ViewController.swift in Sources */,
 				C0D3F7881DAFF72100D4FA42 /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +292,7 @@
 				C0D3F7981DAFF72100D4FA42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
