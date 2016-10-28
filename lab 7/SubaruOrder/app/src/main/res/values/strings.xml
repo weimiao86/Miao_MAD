@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Order Subaru</string>
+    <string name="space"> 1 </string>
+    <string name="userName">Name</string>
+    <string name="nameVisible">Visible</string>
+    <string name="userNameHint"> your name </string>
+    <string name="model">Model</string>
+    <string-array name="models">
+        <item>BRZ</item>
+        <item>Impreza</item>
+        <item>WRX</item>
+        <item>Legacy</item>
+        <item>Forester</item>
+        <item>Crosstrek</item>
+        <item>Outback</item>
+    </string-array>
+    <string name="year">Year</string>
+    <string name="R2015">2015</string>
+    <string name="R2016">2016</string>
+    <string name="R2017">2017</string>
+    <string name="condition">Condition</string>
+    <string name="color">Color</string>
+    <string-array name="colors">
+        <item>Crystal White Pearl</item>
+        <item>Venetian Red Pearl</item>
+        <item>Ice Silver Metallic</item>
+        <item>Carbide Gray Metallic</item>
+        <item>Crystal Black Silica</item>
+        <item>Island Blue Pearl</item>
+        <item>Lithium Red Pearl</item>
+    </string-array>
+    <string name="ToggleButton">Condition</string>
+    <string name="toggle_on">Old</string>
+    <string name="toggle_off">New</string>
+    <string name="button">Done</string>
+    <string name="orderifo">Order info</string>
+    <string name="imageDescription">Vehicle Image</string>
+    <string name="Acc">Accessories</string>
+    <string name="CheckBox1">Subwoofer</string>
+    <string name="CheckBox2">Alloy Wheel</string>
+    <string name="CheckBox3">Cargo Tray</string>
+
+
+</resources>
