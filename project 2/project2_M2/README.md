@@ -2,7 +2,7 @@ Project2-MileStone2
 
 -Wei Miao
 
-App title: WeatherBuddy
+- App title: WeatherBuddy
 
 This app can not run on emulator due to updating googlePlay service error, so please test on devices.
 
