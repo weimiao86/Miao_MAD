@@ -26,7 +26,7 @@ Apk available on PlayStore: https://play.google.com/store/apps/details?id=com.ma
 
 2. To change location, drag the marker(long press) on map directly or input the zip code. Then click "GetWeather" to get current weather of the selected location.
 
-3. To back to the current location, click the "Current Location" icon on map; To zoom in and out, use the "+/-" toolbar on the map.
+3. To back to the current location, click the "Current Location" icon on map; To zoom in and out, use pinch gesture or use the "+/-" toolbar on the map.
 
 4. When the "GetWeather" button clicked, the App will check the zip code EditText first, if it is empty, App will get location from map marker; if the zip code area is not empty, but it is not in 5-digit format, the app will alert user in voice; if the zip code in 5-digit numbers, the App will show the zip code location on map and report the current weather of it.
 
