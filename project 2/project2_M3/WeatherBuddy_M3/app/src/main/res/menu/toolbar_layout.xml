@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mad.weimiao.weatherbuddy;">
+
+    <item android:id="@+id/unit"
+        android:title="@string/unit"
+        app:showAsAction="always"
+        android:icon="@drawable/fahrenheit"
+        tools:ignore="AlwaysShowAction" />
+    <item android:title="@string/help"
+        android:id="@+id/help"
+        app:showAsAction="always"
+        android:icon="@drawable/help" />
+</menu>
