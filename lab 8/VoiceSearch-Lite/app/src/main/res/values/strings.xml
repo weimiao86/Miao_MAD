@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VoiceSearch-Lite</string>
+    <string name="result">Tap the mic to start a voice search!</string>
+    <string name="bunDescrip">imageButton</string>
+    <string name="speech_prompt">Speak to search!</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support voice input</string>
+    <string name="nothing_catched">Sorry, I catch nothing!</string>
+</resources>
