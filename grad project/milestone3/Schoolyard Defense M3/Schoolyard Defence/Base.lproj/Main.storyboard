@@ -191,8 +191,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wordBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qZo-Lf-Cma" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fga-23-jpk">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fga-23-jpk">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TLS-OL-L9Z"/>
@@ -209,6 +210,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pod-Ng-Jan"/>
                                 </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-zu-S3p" userLabel="score">
@@ -479,6 +481,9 @@
                                 <exclude reference="KGF-02-BGe"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="G1u-No-6fM" appends="YES" id="uoh-jA-De3"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="cannonImage" destination="Zfq-2H-ITT" id="UJx-p4-yxN"/>
@@ -492,6 +497,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhP-VC-hAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="G1u-No-6fM">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="eab-2R-iNe" id="OrF-cF-JK7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="330" y="415"/>
         </scene>
@@ -548,6 +558,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lcv-6B-3x2"/>
                                 </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGv-15-4GM" userLabel="score">
@@ -751,7 +762,7 @@
         <image name="background" width="833" height="625"/>
         <image name="bear1" width="100" height="135"/>
         <image name="cannon1" width="300" height="200"/>
-        <image name="correct" width="170" height="170"/>
+        <image name="correct" width="85" height="85"/>
         <image name="done-button" width="200" height="88"/>
         <image name="math" width="90" height="90"/>
         <image name="mathBcakground" width="600" height="750"/>

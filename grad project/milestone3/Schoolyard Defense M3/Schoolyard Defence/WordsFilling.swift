@@ -229,8 +229,8 @@ class WordsFilling: UIViewController, UITextFieldDelegate {
                 self.score = 0
                 self.steps = 5
                 self.scoreLabel.text = "Score: " + "\(self.score)"
-                self.resetTextField()
                 self.wordsIndex = 0
+                self.resetTextField()
                 self.updateImage()
                 self.stepsLabel.text = "\(self.steps)"
         })
@@ -289,5 +289,11 @@ class WordsFilling: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func onTapGestureRecognized(sender: UITapGestureRecognizer) {
+        
+        for i in 0..<charsTextField.count{
+            charsTextField[i].resignFirstResponder()
+        }
+    }
     
 }

@@ -104,6 +104,7 @@ class MathCalculating: UIViewController, UITextFieldDelegate {
                 }
                 stepsLabel.text = "\(steps)"
                 updateQuestion()
+                resultTextField.text = ""
             }else{
                 self.resultImage.alpha = 1
                 UIView.animateWithDuration(1.0, delay: 0.5, options: .CurveEaseInOut, animations: {
